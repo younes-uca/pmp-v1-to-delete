@@ -1,0 +1,193 @@
+#------------------- Projet --------------------------
+
+
+Projet_MS(ms1)_ROLES(admin)_SUB-MODULE(projet)_MENU(Gestion Projet):
+  id: Long ID
+  code: String REF_REQUIERED
+  libelle: String
+  typeProjet: TypeProjet
+  budget: BigDecimal
+  progression: String LARGE
+  dateDebut: LocalDateTime
+  dateFinEstime: LocalDateTime
+  dateFin: LocalDateTime
+  projetRessources: ProjetRessource List
+  taches: Tache List
+  client: Client
+  chefProjet: ChefProjet
+  remarques: Remarque List
+
+
+TypeProjet_MS(ms1)_ROLES(admin)_SUB-MODULE(projet)_MENU(Gestion Projet):
+  id: Long ID
+  code: String REF_REQUIERED
+  libelle: String LABEL_REQUIERED
+
+Client_MS(ms1)_ROLES(admin)_SUB-MODULE(projet)_MENU(Gestion Projet):
+  id: Long ID
+  code: String REF_REQUIERED
+  nom: String
+  prenom: String
+  adresse: String
+  societe: String
+  email: String
+  tele: String
+
+
+ChefProjet_MS(ms1)_ROLES(admin)_SUB-MODULE(projet)_MENU(Gestion Projet):
+  id: Long ID
+  code: String REF_REQUIERED
+  nom: String
+  prenom: String
+  email: String
+  tele: String
+  salaire: BigDecimal
+
+
+Remarque_MS(ms1)_ROLES(admin)_SUB-MODULE(projet)_MENU(Gestion Projet):
+  id: Long ID
+  code: String REF_REQUIERED
+  libelle: String LARGE
+  dateRemarque: LocalDateTime
+  projet: Projet
+
+
+
+#---------------------- Facture ------------------------------
+
+Facture_MS(ms1)_ROLES(admin)_SUB-MODULE(facture)_MENU(Gestion Facture):
+  id: Long ID
+  reference: String REF_REQUIERED
+  libelle: String LABEL_REQUIERED
+  montant: BigDecimal
+  dateEmission: LocalDateTime
+  dateEcheance: LocalDateTime
+  comptable: Comptable
+  projet: Projet
+
+Paiement_MS(ms1)_ROLES(admin)_SUB-MODULE(facture)_MENU(Gestion Facture):
+  id: Long ID
+  code: String REF_REQUIERED
+  facture: Facture
+  datePaiement: LocalDateTime
+  montant: BigDecimal
+  moyenPaiement: MoyenPaiement
+
+
+MoyenPaiement_MS(ms1)_ROLES(admin)_SUB-MODULE(facture)_MENU(Gestion Facture):
+  id: Long ID
+  code: String REF_REQUIERED
+  libelle: String
+  dateRemarque: LocalDateTime
+
+
+#------------------ Comptable ---------------------
+
+
+Comptable_MS(ms1)_ROLES(admin)_SUB-MODULE(facture)_MENU(Gestion Comptable):
+  id: Long ID
+  code: String REF_REQUIERED
+  nom: String
+  prenom: String
+  email: String
+  tele: String
+  salaire: BigDecimal
+
+
+Declaration_MS(ms1)_ROLES(admin)_SUB-MODULE(facture)_MENU(Gestion Comptable):
+  id: Long ID
+  reference: String REF_REQUIERED
+  libelle: String LABEL_REQUIERED
+  typeDeclaration: TypeDeclaration
+
+TypeDeclaration_MS(ms1)_ROLES(admin)_SUB-MODULE(facture)_MENU(Gestion Comptable):
+  id: Long ID
+  reference: String REF_REQUIERED
+  libelle: String LABEL_REQUIERED
+
+
+
+#--------------------- Collaborateurs -------------------------------
+
+Fournisseur_MS(ms1)_ROLES(admin)_SUB-MODULE(ressource)_MENU(Gestion Collaborateur):
+  id: Long ID
+  code: String REF_REQUIERED
+  nom: String
+  prenom: String
+  email: String
+  tele: String
+  societe: String
+  adresse: String LARGE
+
+Collaborateur_MS(ms1)_ROLES(admin)_SUB-MODULE(ressource)_MENU(Gestion Collaborateur):
+  id: Long ID
+  code: String REF_REQUIERED
+  nom: String
+  prenom: String
+  email: String
+  tele: String
+  titre: String
+  salaire: BigDecimal
+
+
+
+Tache_MS(ms1)_ROLES(admin)_SUB-MODULE(collaborateur)_MENU(Gestion Collaborateur):
+  id: Long ID
+  code: String REF_REQUIERED
+  nom: String
+  prenom: String
+  email: String
+  tele: String
+  titre: String
+  salaire: BigDecimal
+  collaborateur: Collaborateur
+
+
+
+  #------------------------------- Ressource ---------------------------------------
+
+Ressource_MS(ms1)_ROLES(admin)_SUB-MODULE(resource)_MENU(Gestion Ressource):
+  id: Long ID
+  code: String CODE_REQUIERED
+  nom: String
+  prix: BigDecimal
+  cout: BigDecimal
+  type: String
+  unite: String
+  fournisseur: Fournisseur
+  materiel: Materiel
+  collaborateur: Collaborateur
+  entiteAdministrative: EntiteAdministrative
+
+ProjetRessource_MS(ms1)_ROLES(admin)_SUB-MODULE(resource)_MENU(Gestion Ressource):
+  id: Long ID
+  code: String REF_REQUIERED
+  ressource: Ressource
+  prix: BigDecimal
+  quantite: String
+  projet: Projet
+
+
+Materiel_MS(ms1)_ROLES(admin)_SUB-MODULE(ressource)_MENU(Gestion Ressource):
+  id: Long ID
+  libelle: String LABEL_REQUIERED
+  reference: String REF_REQUIERED
+  quantite: String
+  categorieMateriel: CategorieMateriel
+  prix: BigDecimal
+
+CategorieMateriel_MS(ms1)_ROLES(admin)_SUB-MODULE(ressource)_MENU(Gestion Ressource):
+  id: Long ID
+  libelle: String LABEL_REQUIERED
+  reference: String REF_REQUIERED
+
+
+
+EntiteAdministrative_MS(ms1)_ROLES(admin)_SUB-MODULE(ressource)_MENU(Gestion Ressource):
+  id: Long ID
+  code: String REF_REQUIERED
+  libelle: String LABEL_REQUIERED
+
+$CONFIG:
+  ms: "{name=ms1, packaging=myms1, url=http://localhost:8090/api/v1} ; {name=ms2, packaging=myms2, url=http://localhost:8091/api/v1}"
+  currentMs: ms1
