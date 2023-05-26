@@ -8,10 +8,10 @@ import {PaiementService} from 'src/app/controller/service/Paiement.service';
 import {PaiementDto} from 'src/app/controller/model/Paiement.model';
 import {PaiementCriteria} from 'src/app/controller/criteria/PaiementCriteria.model';
 
-import {MoyenPaiementDto} from 'src/app/controller/model/MoyenPaiement.model';
-import {MoyenPaiementService} from 'src/app/controller/service/MoyenPaiement.service';
 import {FactureDto} from 'src/app/controller/model/Facture.model';
 import {FactureService} from 'src/app/controller/service/Facture.service';
+import {MoyenPaiementDto} from 'src/app/controller/model/MoyenPaiement.model';
+import {MoyenPaiementService} from 'src/app/controller/service/MoyenPaiement.service';
 @Component({
   selector: 'app-paiement-view-admin',
   templateUrl: './paiement-view-admin.component.html'
@@ -19,7 +19,7 @@ import {FactureService} from 'src/app/controller/service/Facture.service';
 export class PaiementViewAdminComponent extends AbstractViewController<PaiementDto, PaiementCriteria, PaiementService> implements OnInit {
 
 
-    constructor(private paiementService: PaiementService, private moyenPaiementService: MoyenPaiementService, private factureService: FactureService){
+    constructor(private paiementService: PaiementService, private factureService: FactureService, private moyenPaiementService: MoyenPaiementService){
         super(paiementService);
     }
 

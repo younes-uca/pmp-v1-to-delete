@@ -22,12 +22,12 @@ import ma.sir.pmp.bean.core.ProjetRessource;
 import ma.sir.pmp.bean.core.Tache;
 import ma.sir.pmp.bean.core.Remarque;
 
-import ma.sir.pmp.service.facade.admin.RemarqueAdminService ;
 import ma.sir.pmp.service.facade.admin.ChefProjetAdminService ;
-import ma.sir.pmp.service.facade.admin.TacheAdminService ;
-import ma.sir.pmp.service.facade.admin.TypeProjetAdminService ;
 import ma.sir.pmp.service.facade.admin.ProjetRessourceAdminService ;
 import ma.sir.pmp.service.facade.admin.ClientAdminService ;
+import ma.sir.pmp.service.facade.admin.TypeProjetAdminService ;
+import ma.sir.pmp.service.facade.admin.RemarqueAdminService ;
+import ma.sir.pmp.service.facade.admin.TacheAdminService ;
 
 
 import java.util.List;
@@ -123,17 +123,17 @@ ProjetHistoryDao> implements ProjetAdminService {
     }
 
     @Autowired
-    private RemarqueAdminService remarqueService ;
-    @Autowired
     private ChefProjetAdminService chefProjetService ;
-    @Autowired
-    private TacheAdminService tacheService ;
-    @Autowired
-    private TypeProjetAdminService typeProjetService ;
     @Autowired
     private ProjetRessourceAdminService projetRessourceService ;
     @Autowired
     private ClientAdminService clientService ;
+    @Autowired
+    private TypeProjetAdminService typeProjetService ;
+    @Autowired
+    private RemarqueAdminService remarqueService ;
+    @Autowired
+    private TacheAdminService tacheService ;
 
     public ProjetAdminServiceImpl(ProjetDao dao, ProjetHistoryDao historyDao) {
         super(dao, historyDao);

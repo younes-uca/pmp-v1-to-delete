@@ -17,8 +17,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import ma.sir.pmp.service.facade.admin.MoyenPaiementAdminService ;
 import ma.sir.pmp.service.facade.admin.FactureAdminService ;
+import ma.sir.pmp.service.facade.admin.MoyenPaiementAdminService ;
 
 
 import java.util.List;
@@ -51,9 +51,9 @@ PaiementHistoryDao> implements PaiementAdminService {
     }
 
     @Autowired
-    private MoyenPaiementAdminService moyenPaiementService ;
-    @Autowired
     private FactureAdminService factureService ;
+    @Autowired
+    private MoyenPaiementAdminService moyenPaiementService ;
 
     public PaiementAdminServiceImpl(PaiementDao dao, PaiementHistoryDao historyDao) {
         super(dao, historyDao);

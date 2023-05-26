@@ -8,22 +8,22 @@ import {ProjetDto} from 'src/app/controller/model/Projet.model';
 import {ProjetCriteria} from 'src/app/controller/criteria/ProjetCriteria.model';
 
 
-import {RemarqueDto} from 'src/app/controller/model/Remarque.model';
-import {RemarqueService} from 'src/app/controller/service/Remarque.service';
-import {TypeProjetDto} from 'src/app/controller/model/TypeProjet.model';
-import {TypeProjetService} from 'src/app/controller/service/TypeProjet.service';
-import {RessourceDto} from 'src/app/controller/model/Ressource.model';
-import {RessourceService} from 'src/app/controller/service/Ressource.service';
-import {ProjetRessourceDto} from 'src/app/controller/model/ProjetRessource.model';
-import {ProjetRessourceService} from 'src/app/controller/service/ProjetRessource.service';
-import {ClientDto} from 'src/app/controller/model/Client.model';
-import {ClientService} from 'src/app/controller/service/Client.service';
 import {ChefProjetDto} from 'src/app/controller/model/ChefProjet.model';
 import {ChefProjetService} from 'src/app/controller/service/ChefProjet.service';
+import {ClientDto} from 'src/app/controller/model/Client.model';
+import {ClientService} from 'src/app/controller/service/Client.service';
+import {TypeProjetDto} from 'src/app/controller/model/TypeProjet.model';
+import {TypeProjetService} from 'src/app/controller/service/TypeProjet.service';
+import {ProjetRessourceDto} from 'src/app/controller/model/ProjetRessource.model';
+import {ProjetRessourceService} from 'src/app/controller/service/ProjetRessource.service';
+import {RemarqueDto} from 'src/app/controller/model/Remarque.model';
+import {RemarqueService} from 'src/app/controller/service/Remarque.service';
 import {TacheDto} from 'src/app/controller/model/Tache.model';
 import {TacheService} from 'src/app/controller/service/Tache.service';
 import {CollaborateurDto} from 'src/app/controller/model/Collaborateur.model';
 import {CollaborateurService} from 'src/app/controller/service/Collaborateur.service';
+import {RessourceDto} from 'src/app/controller/model/Ressource.model';
+import {RessourceService} from 'src/app/controller/service/Ressource.service';
 
 @Component({
   selector: 'app-projet-edit-admin',
@@ -47,7 +47,7 @@ export class ProjetEditAdminComponent extends AbstractEditController<ProjetDto, 
 
 
 
-    constructor( private projetService: ProjetService , private remarqueService: RemarqueService, private chefProjetService: ChefProjetService, private tacheService: TacheService, private typeProjetService: TypeProjetService, private ressourceService: RessourceService, private projetRessourceService: ProjetRessourceService, private clientService: ClientService, private collaborateurService: CollaborateurService) {
+    constructor( private projetService: ProjetService , private chefProjetService: ChefProjetService, private projetRessourceService: ProjetRessourceService, private clientService: ClientService, private typeProjetService: TypeProjetService, private remarqueService: RemarqueService, private tacheService: TacheService, private collaborateurService: CollaborateurService, private ressourceService: RessourceService) {
         super(projetService);
     }
 

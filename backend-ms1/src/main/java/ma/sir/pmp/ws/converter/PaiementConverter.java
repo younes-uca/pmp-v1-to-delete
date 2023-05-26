@@ -15,9 +15,9 @@ import ma.sir.pmp.ws.dto.PaiementDto;
 public class PaiementConverter extends AbstractConverter<Paiement, PaiementDto, PaiementHistory> {
 
     @Autowired
-    private MoyenPaiementConverter moyenPaiementConverter ;
-    @Autowired
     private FactureConverter factureConverter ;
+    @Autowired
+    private MoyenPaiementConverter moyenPaiementConverter ;
     private boolean facture;
     private boolean moyenPaiement;
 
@@ -84,17 +84,17 @@ public class PaiementConverter extends AbstractConverter<Paiement, PaiementDto, 
     }
 
 
-    public MoyenPaiementConverter getMoyenPaiementConverter(){
-        return this.moyenPaiementConverter;
-    }
-    public void setMoyenPaiementConverter(MoyenPaiementConverter moyenPaiementConverter ){
-        this.moyenPaiementConverter = moyenPaiementConverter;
-    }
     public FactureConverter getFactureConverter(){
         return this.factureConverter;
     }
     public void setFactureConverter(FactureConverter factureConverter ){
         this.factureConverter = factureConverter;
+    }
+    public MoyenPaiementConverter getMoyenPaiementConverter(){
+        return this.moyenPaiementConverter;
+    }
+    public void setMoyenPaiementConverter(MoyenPaiementConverter moyenPaiementConverter ){
+        this.moyenPaiementConverter = moyenPaiementConverter;
     }
     public boolean  isFacture(){
         return this.facture;

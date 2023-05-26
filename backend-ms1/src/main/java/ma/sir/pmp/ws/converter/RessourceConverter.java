@@ -15,13 +15,13 @@ import ma.sir.pmp.ws.dto.RessourceDto;
 public class RessourceConverter extends AbstractConverter<Ressource, RessourceDto, RessourceHistory> {
 
     @Autowired
-    private FournisseurConverter fournisseurConverter ;
-    @Autowired
-    private MaterielConverter materielConverter ;
-    @Autowired
     private EntiteAdministrativeConverter entiteAdministrativeConverter ;
     @Autowired
+    private FournisseurConverter fournisseurConverter ;
+    @Autowired
     private CollaborateurConverter collaborateurConverter ;
+    @Autowired
+    private MaterielConverter materielConverter ;
     private boolean fournisseur;
     private boolean materiel;
     private boolean collaborateur;
@@ -116,29 +116,29 @@ public class RessourceConverter extends AbstractConverter<Ressource, RessourceDt
     }
 
 
-    public FournisseurConverter getFournisseurConverter(){
-        return this.fournisseurConverter;
-    }
-    public void setFournisseurConverter(FournisseurConverter fournisseurConverter ){
-        this.fournisseurConverter = fournisseurConverter;
-    }
-    public MaterielConverter getMaterielConverter(){
-        return this.materielConverter;
-    }
-    public void setMaterielConverter(MaterielConverter materielConverter ){
-        this.materielConverter = materielConverter;
-    }
     public EntiteAdministrativeConverter getEntiteAdministrativeConverter(){
         return this.entiteAdministrativeConverter;
     }
     public void setEntiteAdministrativeConverter(EntiteAdministrativeConverter entiteAdministrativeConverter ){
         this.entiteAdministrativeConverter = entiteAdministrativeConverter;
     }
+    public FournisseurConverter getFournisseurConverter(){
+        return this.fournisseurConverter;
+    }
+    public void setFournisseurConverter(FournisseurConverter fournisseurConverter ){
+        this.fournisseurConverter = fournisseurConverter;
+    }
     public CollaborateurConverter getCollaborateurConverter(){
         return this.collaborateurConverter;
     }
     public void setCollaborateurConverter(CollaborateurConverter collaborateurConverter ){
         this.collaborateurConverter = collaborateurConverter;
+    }
+    public MaterielConverter getMaterielConverter(){
+        return this.materielConverter;
+    }
+    public void setMaterielConverter(MaterielConverter materielConverter ){
+        this.materielConverter = materielConverter;
     }
     public boolean  isFournisseur(){
         return this.fournisseur;

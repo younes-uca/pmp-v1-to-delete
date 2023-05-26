@@ -5,14 +5,14 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {RessourceService} from 'src/app/controller/service/Ressource.service';
 import {RessourceDto} from 'src/app/controller/model/Ressource.model';
 import {RessourceCriteria} from 'src/app/controller/criteria/RessourceCriteria.model';
-import {FournisseurDto} from 'src/app/controller/model/Fournisseur.model';
-import {FournisseurService} from 'src/app/controller/service/Fournisseur.service';
-import {MaterielDto} from 'src/app/controller/model/Materiel.model';
-import {MaterielService} from 'src/app/controller/service/Materiel.service';
 import {EntiteAdministrativeDto} from 'src/app/controller/model/EntiteAdministrative.model';
 import {EntiteAdministrativeService} from 'src/app/controller/service/EntiteAdministrative.service';
+import {FournisseurDto} from 'src/app/controller/model/Fournisseur.model';
+import {FournisseurService} from 'src/app/controller/service/Fournisseur.service';
 import {CollaborateurDto} from 'src/app/controller/model/Collaborateur.model';
 import {CollaborateurService} from 'src/app/controller/service/Collaborateur.service';
+import {MaterielDto} from 'src/app/controller/model/Materiel.model';
+import {MaterielService} from 'src/app/controller/service/Materiel.service';
 @Component({
   selector: 'app-ressource-create-admin',
   templateUrl: './ressource-create-admin.component.html'
@@ -29,7 +29,7 @@ export class RessourceCreateAdminComponent extends AbstractCreateController<Ress
     private _validEntiteAdministrativeCode = true;
     private _validEntiteAdministrativeLibelle = true;
 
-    constructor( private ressourceService: RessourceService , private fournisseurService: FournisseurService, private materielService: MaterielService, private entiteAdministrativeService: EntiteAdministrativeService, private collaborateurService: CollaborateurService) {
+    constructor( private ressourceService: RessourceService , private entiteAdministrativeService: EntiteAdministrativeService, private fournisseurService: FournisseurService, private collaborateurService: CollaborateurService, private materielService: MaterielService) {
         super(ressourceService);
     }
 

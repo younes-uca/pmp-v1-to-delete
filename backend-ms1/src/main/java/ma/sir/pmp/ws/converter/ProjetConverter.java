@@ -16,21 +16,21 @@ import ma.sir.pmp.ws.dto.ProjetDto;
 public class ProjetConverter extends AbstractConverter<Projet, ProjetDto, ProjetHistory> {
 
     @Autowired
-    private RemarqueConverter remarqueConverter ;
-    @Autowired
-    private TypeProjetConverter typeProjetConverter ;
-    @Autowired
-    private RessourceConverter ressourceConverter ;
-    @Autowired
-    private ProjetRessourceConverter projetRessourceConverter ;
+    private ChefProjetConverter chefProjetConverter ;
     @Autowired
     private ClientConverter clientConverter ;
     @Autowired
-    private ChefProjetConverter chefProjetConverter ;
+    private TypeProjetConverter typeProjetConverter ;
+    @Autowired
+    private ProjetRessourceConverter projetRessourceConverter ;
+    @Autowired
+    private RemarqueConverter remarqueConverter ;
     @Autowired
     private TacheConverter tacheConverter ;
     @Autowired
     private CollaborateurConverter collaborateurConverter ;
+    @Autowired
+    private RessourceConverter ressourceConverter ;
     private boolean typeProjet;
     private boolean client;
     private boolean chefProjet;
@@ -157,29 +157,11 @@ public class ProjetConverter extends AbstractConverter<Projet, ProjetDto, Projet
     }
 
 
-    public RemarqueConverter getRemarqueConverter(){
-        return this.remarqueConverter;
+    public ChefProjetConverter getChefProjetConverter(){
+        return this.chefProjetConverter;
     }
-    public void setRemarqueConverter(RemarqueConverter remarqueConverter ){
-        this.remarqueConverter = remarqueConverter;
-    }
-    public TypeProjetConverter getTypeProjetConverter(){
-        return this.typeProjetConverter;
-    }
-    public void setTypeProjetConverter(TypeProjetConverter typeProjetConverter ){
-        this.typeProjetConverter = typeProjetConverter;
-    }
-    public RessourceConverter getRessourceConverter(){
-        return this.ressourceConverter;
-    }
-    public void setRessourceConverter(RessourceConverter ressourceConverter ){
-        this.ressourceConverter = ressourceConverter;
-    }
-    public ProjetRessourceConverter getProjetRessourceConverter(){
-        return this.projetRessourceConverter;
-    }
-    public void setProjetRessourceConverter(ProjetRessourceConverter projetRessourceConverter ){
-        this.projetRessourceConverter = projetRessourceConverter;
+    public void setChefProjetConverter(ChefProjetConverter chefProjetConverter ){
+        this.chefProjetConverter = chefProjetConverter;
     }
     public ClientConverter getClientConverter(){
         return this.clientConverter;
@@ -187,11 +169,23 @@ public class ProjetConverter extends AbstractConverter<Projet, ProjetDto, Projet
     public void setClientConverter(ClientConverter clientConverter ){
         this.clientConverter = clientConverter;
     }
-    public ChefProjetConverter getChefProjetConverter(){
-        return this.chefProjetConverter;
+    public TypeProjetConverter getTypeProjetConverter(){
+        return this.typeProjetConverter;
     }
-    public void setChefProjetConverter(ChefProjetConverter chefProjetConverter ){
-        this.chefProjetConverter = chefProjetConverter;
+    public void setTypeProjetConverter(TypeProjetConverter typeProjetConverter ){
+        this.typeProjetConverter = typeProjetConverter;
+    }
+    public ProjetRessourceConverter getProjetRessourceConverter(){
+        return this.projetRessourceConverter;
+    }
+    public void setProjetRessourceConverter(ProjetRessourceConverter projetRessourceConverter ){
+        this.projetRessourceConverter = projetRessourceConverter;
+    }
+    public RemarqueConverter getRemarqueConverter(){
+        return this.remarqueConverter;
+    }
+    public void setRemarqueConverter(RemarqueConverter remarqueConverter ){
+        this.remarqueConverter = remarqueConverter;
     }
     public TacheConverter getTacheConverter(){
         return this.tacheConverter;
@@ -204,6 +198,12 @@ public class ProjetConverter extends AbstractConverter<Projet, ProjetDto, Projet
     }
     public void setCollaborateurConverter(CollaborateurConverter collaborateurConverter ){
         this.collaborateurConverter = collaborateurConverter;
+    }
+    public RessourceConverter getRessourceConverter(){
+        return this.ressourceConverter;
+    }
+    public void setRessourceConverter(RessourceConverter ressourceConverter ){
+        this.ressourceConverter = ressourceConverter;
     }
     public boolean  isTypeProjet(){
         return this.typeProjet;

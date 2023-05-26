@@ -17,10 +17,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
-import ma.sir.pmp.service.facade.admin.FournisseurAdminService ;
-import ma.sir.pmp.service.facade.admin.MaterielAdminService ;
 import ma.sir.pmp.service.facade.admin.EntiteAdministrativeAdminService ;
+import ma.sir.pmp.service.facade.admin.FournisseurAdminService ;
 import ma.sir.pmp.service.facade.admin.CollaborateurAdminService ;
+import ma.sir.pmp.service.facade.admin.MaterielAdminService ;
 
 
 import java.util.List;
@@ -62,13 +62,13 @@ RessourceHistoryDao> implements RessourceAdminService {
     }
 
     @Autowired
-    private FournisseurAdminService fournisseurService ;
-    @Autowired
-    private MaterielAdminService materielService ;
-    @Autowired
     private EntiteAdministrativeAdminService entiteAdministrativeService ;
     @Autowired
+    private FournisseurAdminService fournisseurService ;
+    @Autowired
     private CollaborateurAdminService collaborateurService ;
+    @Autowired
+    private MaterielAdminService materielService ;
 
     public RessourceAdminServiceImpl(RessourceDao dao, RessourceHistoryDao historyDao) {
         super(dao, historyDao);
